@@ -35,4 +35,12 @@ if (whiptail --title "Linux Backup - caiomcg@dunadan" --yesno "Use libopus?" 8 7
     FFMPEG_FLAGS+="--enable-libopus "
 fi
 
+if (whiptail --title "Linux Backup - caiomcg@dunadan" --yesno "Install ffplay?" 8 78) then
+    FFMPEG_FLAGS+="--enable-ffplay "
+fi
+
+if (whiptail --title "Linux Backup - caiomcg@dunadan" --yesno "Install ffplay?" 8 78) then
+    FFMPEG_FLAGS+="--extra-libs=-lasound "
+fi
+
 (cd $FILE_PATH; ./configure $FFMPEG_FLAGS; make; sudo make install)
